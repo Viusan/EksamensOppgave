@@ -72,8 +72,6 @@ console.log(hytte[0].naerHytter.Glitterheim); get the distance
 */
 
 
-
-
 /* -- Maybe Permenant change 
 function createButton(name){
   var buttonEl = document.createElement("button");
@@ -99,7 +97,7 @@ function createButton(name, distance){
   var buttonEl = document.createElement("button");
   buttonEl.innerHTML = name + "'s distance: " + distance + "km";
   buttonEl.value = name;
-  buttonEl.id = distance
+  buttonEl.id = distance;
   buttonEl.className = "hytteButton";
   buttonField.appendChild(buttonEl);
   for(var i = 0; i < buttons.length; i++){
@@ -108,15 +106,15 @@ function createButton(name, distance){
 }
 
 function findPath(e){
-  buttonPressed++
-  console.log(e.target.value + " sine nær hytter: ")
+  buttonPressed++;
+  console.log(e.target.value + " sine nær hytter: ");
   for(var i = 0; i < hytte.length; i++){
     if(hytte[i].hytteName == e.target.value){
-      count = 0
+      count = 0;
       for(var closeHytter in hytte[i].naerHytter){
-        var distance = Object.values(hytte[i].naerHytter)
-        createButton(closeHytter, distance[count])
-        count++
+        var distance = Object.values(hytte[i].naerHytter);
+        createButton(closeHytter, distance[count]);
+        count++;
       }
       /*
       console.log(Object.values(hytte[i].naerHytter));  
@@ -129,7 +127,7 @@ function findPath(e){
   if(buttonPressed == 1){
     startPoint = e.target.value;
   }else if(buttonPressed > 1){
-    travelDistanceArray.push(e.target.id)
+    travelDistanceArray.push(e.target.id);
     console.log(travelDistanceArray);
   }
 }
